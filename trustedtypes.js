@@ -1,0 +1,1 @@
+HTMLelement.innerHTML = trustedHTMLObject
