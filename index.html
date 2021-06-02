@@ -1,4 +1,14 @@
 <head>
+	<meta http-equiv="Content-Security-Policy" content="trusted-types unsafe escape; require-trusted-types-for 'script'">
 </head>
 <body>
+	// Test 1
+	<div id="div1"></div>
+	<script>
+		// Test 1 - Will fail
+		var anElement = document.getElementById("div1");
+		anElement.innerHTML = location.href
+	</script>
+
+	
 </body>
