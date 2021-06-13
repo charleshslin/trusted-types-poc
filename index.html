@@ -2,13 +2,41 @@
 	<meta http-equiv="Content-Security-Policy" content="trusted-types unsafe escape; require-trusted-types-for 'script'">
 </head>
 <body>
-	// Test 1
+	Test 1 - Fail
 	<div id="div1"></div>
 	<script>
 		// Test 1 - Will fail
 		var anElement = document.getElementById("div1");
-		anElement.innerHTML = location.href
+		anElement.innerHTML = location.href;
 	</script>
 
-	
+	Test 2 - Pass
+	<div id="div2"></div>
+	<script>
+		// Test 2 - Will pass
+		var anElement = document.getElementById("div2");
+		anElement.textContent = location.href;
+	</script>
+
+	Test 3 - Should fail, but passes
+	<div id="div3"></div>
+	<script>
+		// Test 3 - Should fail, but passes
+		var param1 = location.search.split('param1=')[1]
+		//document.location = param1;
+	</script>
+
+	Test 4 - Fail
+	<div id="div4"></div>
+	<script>
+		// Test 4
+		eval("alert('hi');");
+	</script>
+
+	Test 5
+	<div id="div5"></div>
+	<script>
+		// Test 5
+		
+	</script>
 </body>
