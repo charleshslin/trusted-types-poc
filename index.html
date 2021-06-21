@@ -35,8 +35,11 @@
 
 	Test 5
 	<div id="div5"></div>
+	<script type="text/javascript" src="src/purify.js"></script>
 	<script>
 		// Test 5
-		
+		var dirtyHTML = '<img src=x onerror=alert(1)//>';
+		var cleanHTML = DOMPurify.sanitize(dirtyHTML);
+		document.getElementById("div5").innerHTML = cleanHTML;
 	</script>
 </body>
